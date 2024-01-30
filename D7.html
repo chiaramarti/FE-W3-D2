@@ -34,6 +34,12 @@
       .bg-green {
         background-color: aquamarine;
       }
+
+      th {
+        padding: 5px;
+        border-left: solid 1px;
+        margin: 0px;
+      }
     </style>
   </head>
 
@@ -153,7 +159,7 @@
         // p.innerText = testo;
         // console.log(p);
         const firstDiv = document.querySelector("body div"); // senza il body non funzionava
-        // controllare
+        // controllare   // pensavo che il problema fosse diverso   // tipo come erano scritte le var
         console.log(firstDiv);
 
         // firstDiv.appendChild(p);
@@ -209,7 +215,23 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-      const generateTable = function () {};
+      const generateTable = function () {
+        const tableArea = document.getElementById("tableArea");
+        tableArea.innerHTML += `
+        <table>
+          <thead>
+            <tr>
+              <th>immagine</th>
+              <th>nome prodotto</th>
+              <th>quantità</th>
+             <th>prezzo</th>
+            </tr>
+          </thead>
+        </table>
+          `;
+      };
+
+      generateTable();
 
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
