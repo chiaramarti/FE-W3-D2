@@ -35,10 +35,12 @@
         background-color: aquamarine;
       }
 
-      th {
+      table thead tr th,
+      table tbody tr td {
         padding: 5px;
         border-left: solid 1px;
         margin: 0px;
+        text-align: center;
       }
     </style>
   </head>
@@ -237,7 +239,22 @@
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {};
+      const addRow = function () {
+        const table = document.querySelector("table");
+        // avevo lasciato TABLEAREA maaggiunge il tbody fuori dalla table, così è dentro
+        table.innerHTML += `
+          <tbody>
+            <tr>
+              <td>immagine</td>
+              <td>prodotto 1</td>
+              <td>1</td>
+              <td>20</td>
+            </tr>
+          </tbody>
+          `;
+      };
+
+      addRow();
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
