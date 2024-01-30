@@ -30,6 +30,10 @@
       .myHeading {
         color: #ff00d6;
       }
+
+      .bg-green {
+        background-color: aquamarine;
+      }
     </style>
   </head>
 
@@ -148,7 +152,8 @@
         // p.style.margin = "0";
         // p.innerText = testo;
         // console.log(p);
-        const firstDiv = document.querySelectorAll("div")[0];
+        const firstDiv = document.querySelector("body div"); // senza il body non funzionava
+        // controllare
         console.log(firstDiv);
 
         // firstDiv.appendChild(p);
@@ -175,9 +180,11 @@
       const paintItGreen = function () {
         const ulists = document.querySelectorAll("ul");
         for (let i = 0; i < uls.length; i++) {
-          uls[i].classList.add("bgGreen");
+          ulists[i].classList.add("bg-green");
         }
       };
+
+      paintItGreen();
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
